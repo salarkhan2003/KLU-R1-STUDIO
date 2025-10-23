@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rocket Launch Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'spacex-blue': '#005288',
+              'spacex-red': '#D83A3A',
+              'spacex-bg': '#121212',
+              'spacex-card': '#202020',
+              'spacex-border': '#333333',
+              'spacex-gray': '#8a8a8a',
+            },
+            fontFamily: {
+              'sans': ['"Roboto"', 'sans-serif'],
+              'mono': ['"Roboto Mono"', 'monospace'],
+            },
+            keyframes: {
+              subtlePulse: {
+                '0%, 100%': { borderColor: 'currentColor', opacity: 0.8 },
+                '50%': { borderColor: 'currentColor', opacity: 1 },
+              },
+              flicker: {
+                '0%, 100%': { opacity: 1 },
+                '50%': { opacity: 0.8 },
+              },
+              rocketFlame: {
+                '0%, 100%': { transform: 'scaleY(1) translateY(0)', opacity: 1 },
+                '50%': { transform: 'scaleY(1.2) translateY(5px)', opacity: 0.8 },
+              },
+            },
+            animation: {
+              subtlePulse: 'subtlePulse 2s ease-in-out infinite',
+              flicker: 'flicker 1.5s infinite',
+              rocketFlame: 'rocketFlame 0.1s ease-in-out infinite',
+            },
+          },
+        },
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "recharts": "https://aistudiocdn.com/recharts@^3.3.0",
+    "leaflet": "https://esm.sh/leaflet@1.9.4",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.26.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-spacex-bg">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
